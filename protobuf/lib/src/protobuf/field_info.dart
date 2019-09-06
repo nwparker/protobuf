@@ -193,14 +193,14 @@ class MapFieldInfo<K, V> extends FieldInfo<PbMap<K, V>> {
   CreateBuilderFunc valueCreator;
 
   // BuilderInfo used when creating a field set for a map field.
-  final BuilderInfo _mapEntryBuilderInfo;
+  final BuilderInfo mapEntryBuilderInfo;
 
   MapFieldInfo(String name, int tagNumber, int index, int type,
-      this.keyFieldType, this.valueFieldType, this._mapEntryBuilderInfo,
+      this.keyFieldType, this.valueFieldType, this.mapEntryBuilderInfo,
       {String protoName})
       : super(name, tagNumber, index, type,
             defaultOrMaker: () =>
-                PbMap<K, V>(keyFieldType, valueFieldType, _mapEntryBuilderInfo),
+                PbMap<K, V>(keyFieldType, valueFieldType, mapEntryBuilderInfo),
             protoName: protoName) {
     assert(name != null);
     assert(tagNumber != null);
