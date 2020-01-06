@@ -59,6 +59,9 @@ String? _getFieldError(int fieldType, var value) {
     case PbFieldType._MESSAGE_BIT:
       if (value is! GeneratedMessage) return 'not a GeneratedMessage';
       return null;
+    case PbFieldType._MAP:
+      if (value is! Map) return 'not Map';
+      return null;
     default:
       return 'field has unknown type $fieldType';
   }
